@@ -17,7 +17,19 @@ all:test_tool
 test_tool:$(TOOL_OBJ) 
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 	$(STRIP) -S $@
-	
+
+
+test_stack_balance:stack_balance.o stackar.o
+	 $(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+
+
+test_stack_sort:stack_sort.o stackar.o
+	 $(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+
+test_stack_post:stack_postFix.o stackar.o
+	 $(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+
+
 clean:
 	rm -rf $(TOOL_OBJ) test_tool
 
