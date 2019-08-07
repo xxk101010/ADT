@@ -51,9 +51,11 @@ List list_reverse(List list_in)
     PtrToNode next    = NULL;
     PtrToNode head    = current;
 
-  
 
-    while(current != NULL)
+    prev = (PtrToNode)calloc(1, sizeof(struct Node));
+    prev->Element = 0;
+    prev->Next    = NULL;
+    while(current->Next != NULL)
     {
        next          = current->Next;
        current->Next = prev; 

@@ -29,6 +29,20 @@ test_stack_sort:stack_sort.o stackar.o
 test_stack_post:stack_postFix.o stackar.o
 	 $(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
+test_list_reverse: list_reverse.o list.o
+	 $(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS) 
+
+test_list_depu: list_depu.o list.o
+	 $(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+
+test_maxDepth: tree_maxDepth.o tree.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+
+test_kmax: tree_kmax.o tree.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+
+test_dis: tree_dis.o tree.o
+	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
 clean:
 	rm -rf $(TOOL_OBJ) test_tool
