@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 }
 
 
-void kdis(SearchTree node, int k)
+void kdis(SearchTree node, int k, int* c)
 {
 
     if(node == NULL || k == 0)

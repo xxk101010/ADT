@@ -12,11 +12,11 @@ TOOL_OBJ := $(patsubst %.c, %.o, ${TOOL_SRC})
 
 #SRC_LIB := $(shell find $(LIB_DIR) -name "*.a")
 
-all:test_tool
+all:test_stack_balance test_stack_sort test_stack_post test_list_reverse test_maxDepth test_kmax test_dis test_anc
 
-test_tool:$(TOOL_OBJ) 
-	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
-	$(STRIP) -S $@
+#test_tool:$(TOOL_OBJ) 
+#	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+#	$(STRIP) -S $@
 
 
 test_stack_balance:stack_balance.o stackar.o
@@ -44,7 +44,10 @@ test_kmax: tree_kmax.o tree.o
 test_dis: tree_dis.o tree.o
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
+test_anc: tree_anc.o tree.o
+	 $(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
+
 clean:
-	rm -rf $(TOOL_OBJ) test_tool
+	rm -rf $(TOOL_OBJ) test_tool test_stack_balance test_stack_sort test_stack_post test_list_reverse test_maxDepth test_kmax test_dis test_anc test_list_depu
 
 .PHONY:all clean
